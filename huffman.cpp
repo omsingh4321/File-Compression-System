@@ -77,7 +77,7 @@ Hufftree* makeTree(vector<pair<int,char>>freq)
   }
  return Q.top();
 }
-void tellme(map<char,string>&M,string str,Hufftree *root)
+void tellme(map<char,string>&M,string str,Hufftree *root) // it will assign the encoding value of character
 {
    if(!root) return;
    if(root->letter!='#')
@@ -127,38 +127,34 @@ void decode(Hufftree *root,string res,int &index_res,string &ans,Hufftree *head)
    {
     decode(root,res,index_res,ans,head);
    }
-
-
-
 }
 
 int main()
 {
     string input;
-    cout<<"Enter the input string";
+    cout<<"Enter the input string"<<endl;
     cin>>input;
+    cout<<"The original string:-"<<endl<<endl;
+    cout<<input<<endl<<endl;
    vector<pair<int,char>>freq;
    freq=frequency(input);
    Hufftree *tree=makeTree(freq);
    map<char,string>M;
     tellme(M,"",tree);
-    string res="";
+    string encoded="";
 for(int i=0;i<input.size();i++)
 {
-  res+=M[input[i]];
+  encoded+=M[input[i]];
 }
-for(auto P:M)
-{
-    cout<<P.first<<" "<<P.second<<endl;
-}
-cout<<"**************************"<<endl;
-cout<<input<<endl;
-cout<<res<<endl;//this is encoded string
-//Now for decoding
-string decoded_input="";
-int index=0;
-decode(tree,res,index,decoded_input,tree);
-cout<<decoded_input<<endl;
 
+
+cout<<"The encoded string is :-"<<endl<<endl;
+cout<<encoded<<endl<<endl;//this is encoded string
+//Now for decoding
+string decoded="";
+int index=0;
+decode(tree,encoded,index,decoded,tree);
+cout<<"The decoded string is "<<endl<<endl;
+cout<<decoded<<endl;
 return 0;
 }
