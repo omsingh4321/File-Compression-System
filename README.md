@@ -17,5 +17,6 @@ Decode the file and store it to the desired file.
 ![image](https://github.com/omsingh4321/HuffmanCoding/assets/110286904/2931217b-fa06-4d23-b749-837bdb61dc4f)
 ## Output:-
 ![image](https://github.com/omsingh4321/HuffmanCoding/assets/110286904/5bbc61e8-04a5-4ae0-a56f-810e0ad6c103)
+![image](https://github.com/omsingh4321/File-Compression-System/assets/110286904/6161f9f3-05c3-4bb8-8c35-ac30377aeb5f)
 
 
